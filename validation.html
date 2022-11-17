@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <div style="border: 2px solid; width: 500px; height:auto; text-align:center; margin-left: 300px; margin-top: 30px;">
+        <form action="" onsubmit="return validation()" name="form">
+        <h3>Pour s'inscrie,remplir le formulaire suivant: </h3>
+        <br><br>
+        <label for="">Nom :  </label>
+        <input type="text" name="nom" border="3px"><br><br>
+        <label for="">Prenom :  </label>
+        <input type="text" name="prenom"><br><br>
+        <label for="">Date de naissance :  </label>
+        <input type="date" name="dat" ><br><br>
+        <label for="">Mot de passe :  </label>
+        <input type="password" name="password1"><br><br>
+        <label for="">Confirmer mot de passe :  </label>
+        <input type="password" name="password2"><br><br>
+        <br><br>
+        <input type="checkbox" name="accept" >J'accepte les conditions
+        <br><br>
+        <input type="submit" id="btn1" value="Valider">
+        <input type="reset" id="btn2" value="Annuler">
+    </form>
+
+    </div>
+    <script>
+        function validation() {
+            let nom = document.forms['form']['nom']
+            let prenom = document.forms['form']['prenom']
+            let dat = document.forms['form']['dat']
+            let password1 = document.forms['form']['password1']
+            let password2 = document.forms['form']['password2']
+            let accept = document.forms['form']['accept']
+            
+                if (nom.value == "") {
+                    alert("Merci de saisir votre nom " )
+                    input.focus()
+                    return false
+                }
+                if (prenom.value=="") {
+                    alert("il faut sisair votre prenom ")
+                    return false;
+                    password1.focus()
+                    
+                }  
+                if (dat.value=="") {
+                    alert("il faut sisair votre Date de naissance ")
+                    return false;
+                    password1.focus()
+                    
+                } 
+                if(password1.value == "") {
+                    alert("il faut sisair le mot de passe ")
+                    return false;
+                    password1.focus()
+                }
+                if(password2.value == "") {
+                    alert("il faut sisair la confirmation ")
+                    return false;
+                    password2.focus()
+                }
+
+                if (accept.checked <1){
+                alert("il doit caucher la zone d'accepte")
+                return false;
+                }
+                if(password1.value != password2.value ) {
+                alert("la confirmation du password est incorrect")
+                password2.focus()
+                return false
+                }
+                var inp=document.getElementById("dat").value;
+                var d=new date(inp);
+                if (!!d.valueOF()) {
+                    year=d.getFullYear();
+                    console.log(year)
+                    month=d.getMonth();
+                    console.log(month)
+                    day=d.getFulldDate();
+                    console.log(day)
+
+                    
+                    
+                }
+                else{
+                alert("date pas correct")
+                inp.focus();
+                return false
+                }
+              
+            }
+    </script>
+    
+</body>
+</html>
